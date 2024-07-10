@@ -50,7 +50,7 @@ function typeWriter(text, callback) {
         if (i < text.length) {
             process.stdout.write(text.charAt(i));
             i++;
-            setTimeout(typing, Math.floor(Math.random() * (100 - 25 + 1)) + 25); // Zufälliges Timeout zwischen 25 und 100 ms
+            setTimeout(typing, Math.floor(Math.random() * (200 - 25 + 1)) + 25); // Zufälliges Timeout zwischen 25 und 100 ms
         } else if (callback) {
             callback();
         }
