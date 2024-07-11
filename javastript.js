@@ -17,8 +17,6 @@ const categories = {
     '3': { name: 'CSS', questions: questionsCSS, color: color.stahlblau }
 };
 
-let playerName = ''; // Variable für den Spielernamen
-
 // Puzzle-Klasse zur Verwaltung der Fragen
 class Puzzle {
     constructor(questions) {
@@ -118,7 +116,7 @@ function chooseCategory() {
             categoryText += `${category.color}${format.bold}${key}. ${category.name}${reset.all}\n`; // Kategorien auflisten
         });
         typeWriter(categoryText, () => {
-            rl.question('Bitte wähle die Nummer der gewünschten Kategorie: ', (answer) => { // Benutzereingabe lesen
+            rl.question('\nBitte wähle die Nummer der gewünschten Kategorie: ', (answer) => { // Benutzereingabe lesen
                 if (categories[answer.trim()]) {
                     const category = categories[answer.trim()];
                     typeWriter(`\nDu hast dich für ${category.color}${format.bold}${category.name}${reset.all} entschieden!\n`, () => {
